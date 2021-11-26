@@ -1,0 +1,6 @@
+Olá, me chamo Rodrigo e tenho 29 anos.
+Moro em SP na região leste.
+Hoje sou aluno da Labenu, estou estudando para ser
+um Desenvolvedor Web, estamos aprendendo Git e GitHub,
+este documento faz parte do estudo de Git e estou digitando ele
+através do VI do Terminal para ganhar tempo.

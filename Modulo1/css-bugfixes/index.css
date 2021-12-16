@@ -73,12 +73,18 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    
 }
 
 #container-de-descricao>ol {
-    padding: 150px 0px;
+    padding: 150px 350px;
     position: relative;
 }
+
+ #container-de-descricao> h3 {
+    position: relative; 
+    top: -135px
+ }
 
 #container-para-comprar {
     background-color: #e7eb90;
@@ -108,6 +114,16 @@ div:last-child {
 
 table {
     width: 60%;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+/* table> img {
+   
+    height: 510px;
+    width: 50px; */
+    
 }
 
 td button {
@@ -126,12 +142,15 @@ td button {
 
 #back-button {
     background-color: white;
-    width: 100px;
-    height: 20px;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
 }
 
 #back-button:hover {

@@ -8,6 +8,10 @@
     margin: 0;
     padding: 0;
 }
+body {
+
+    font-family: 'Roboto', sans-serif;
+}
 
 h2 {
     background-color: #fe7e02;
@@ -19,6 +23,10 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
 }
 
 button:focus {
@@ -33,9 +41,10 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
+/* div img {
+    background: black; 
+} */
+
 
 .botao-amarelo {
     
@@ -51,7 +60,8 @@ div img {
 }
 
 .botao-amarelo:hover {
-    background-color: #c44f00;
+    background-color: #707070;
+    color: white;
 }
 
 .container {
@@ -60,8 +70,21 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    height: 45px;
+
 }
+
+.icone:hover {
+    
+    opacity: 0.6;
+}
+
+.icone:active {
+    
+    opacity: 100;
+}
+    
+
 
 
 /** 
@@ -76,14 +99,14 @@ div img {
     
 }
 
-#container-de-descricao>ol {
-    padding: 150px 350px;
+#container-de-descricao> ol {
+    padding: 150px 400px;
     position: relative;
 }
 
  #container-de-descricao> h3 {
     position: relative; 
-    top: -135px
+    top: -135px;
  }
 
 #container-para-comprar {
@@ -119,11 +142,10 @@ table {
 
 }
 
-/* table> img {
+img {
    
-    height: 510px;
-    width: 50px; */
-    
+    height: 50px;
+    width: 50px;
 }
 
 td button {
@@ -137,8 +159,8 @@ td button {
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
 }
-
 
 #back-button {
     background-color: white;
@@ -154,5 +176,15 @@ td button {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #707070;
+    color: white;
 }
+
+#back-button {
+
+    margin-top: 200px;
+
+}
+
+
+

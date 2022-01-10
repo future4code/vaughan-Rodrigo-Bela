@@ -1,9 +1,16 @@
 * {
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
 }
 
 
+=======
+    
+    
+}
+
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 a:link { 
     text-decoration:none; 
 } 
@@ -17,6 +24,10 @@ a:link {
 
 header {
     display: grid;
+<<<<<<< HEAD
+=======
+    background-color:#202020;
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 
 }
 
@@ -50,6 +61,10 @@ header {
 aside {
     background-color: blue;
     text-align: center;
+<<<<<<< HEAD
+=======
+    justify-content: center;
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
     
 }
 
@@ -61,8 +76,11 @@ aside2 {
 aside2 a > img {
 
     width: 100px;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 
 .boxVideo > iframe {
@@ -72,8 +90,11 @@ aside2 a > img {
 
 main {
     background-color:#202020;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 .container2 {
     display: grid;
@@ -108,13 +129,101 @@ footer {
     background-color:#202020;
     border: #F47D1F;
     padding-bottom: 15px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 
 hr {
     background-color: #F47D1F;
     border: none;
     height: 2px;
+<<<<<<< HEAD
 
 }
 
+=======
+}
+
+
+
+
+@media (max-width:750px) {
+
+    .body {
+        background-color: #202020;
+
+    }
+
+    
+    .icone-e-texto {
+        
+        background-color: #202020;
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        
+    }
+    
+     #logo {
+        width: 7vh;
+        margin: 30px;
+        
+    }
+
+    .boxVideo > iframe {
+        
+        /* width: 100vw;
+        height: 363px; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #pesquisa {
+        
+        padding: 10px;
+        font-size: 30px;
+        border-color: #000000;
+        background-color: #000000;
+        color: #ffffff;
+        border-style: solid;
+        border-radius: 30px;
+        justify-content: center;
+        width: 50vw;
+        
+    }
+
+    .container2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 12,5vh 12,5vh 12,5vh 12,5vh 12,5vh 12,5vh 12,5vh 12,5vh;
+        grid-row-start: 1;
+        grid-row-end: 8;
+        place-items: center;
+
+    }
+
+     footer {
+        /* display: grid;
+        background-color:#202020;
+        border: #F47D1F;
+        padding-bottom: 15px;
+        place-items: auto;
+        margin-bottom: 1000px; */
+        display: none;
+    }
+/*
+    #irlanda, #vermelhos, #tinta, #praia, #nebli, #coelho, #cosmos, #foguete {
+        width: 290px;
+        text-decoration: none;
+        margin: 50px;
+        background-color: #202020;
+        display: block;
+    }  */
+
+
+  }
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38

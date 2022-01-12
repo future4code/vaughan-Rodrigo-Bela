@@ -1,10 +1,16 @@
 * {
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+}
+
+
+=======
     
     
 }
 
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 a:link { 
     text-decoration:none; 
 } 
@@ -18,7 +24,10 @@ a:link {
 
 header {
     display: grid;
+<<<<<<< HEAD
+=======
     background-color:#202020;
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 
 }
 
@@ -52,7 +61,10 @@ header {
 aside {
     background-color: blue;
     text-align: center;
+<<<<<<< HEAD
+=======
     justify-content: center;
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
     
 }
 
@@ -64,6 +76,11 @@ aside2 {
 aside2 a > img {
 
     width: 100px;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 
 .boxVideo > iframe {
@@ -73,6 +90,11 @@ aside2 a > img {
 
 main {
     background-color:#202020;
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 .container2 {
     display: grid;
@@ -107,12 +129,21 @@ footer {
     background-color:#202020;
     border: #F47D1F;
     padding-bottom: 15px;
+<<<<<<< HEAD
+
+=======
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38
 }
 
 hr {
     background-color: #F47D1F;
     border: none;
     height: 2px;
+<<<<<<< HEAD
+
+}
+
+=======
 }
 
 
@@ -195,3 +226,4 @@ hr {
 
 
   }
+>>>>>>> c87b38e095d3947320c0307f4be2cd1759fdbe38

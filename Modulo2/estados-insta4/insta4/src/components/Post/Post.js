@@ -48,9 +48,11 @@ class Post extends React.Component {
     numeroComentarios: 0
   }
 
-  onClickCurtida = () => {
-    console.log('Curtiu!')
-  }
+  // if(curtido === false && numeroCurtidas: 0) {
+  onClickCurtida = () => {this.setState ({curtido:true, numeroCurtidas: 1,})}
+  
+  
+
 
   onClickComentario = () => {
     this.setState({
@@ -65,6 +67,8 @@ class Post extends React.Component {
     })
   }
 
+
+  
   render() {
     let iconeCurtida
 

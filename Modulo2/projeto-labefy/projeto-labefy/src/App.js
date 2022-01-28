@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
+import CardCadastro from './components/CardCadastro'
+import CardListaMusicas from './components/CardListaMusicas'
+
 
 const Base = styled.div`
   display: grid;
@@ -8,6 +12,13 @@ const Base = styled.div`
   border: 1px white solid;
   height: 90vh;
 `
+// const ImagenFundo = styled.img`
+//   display: grid;
+//   grid-column: 1 / 4;
+//   grid-row: 1 / 3;
+//   width: 100px;
+// `
+
 const Frase = styled.h1`
   display: grid;
   grid-column: 1 / 4;
@@ -15,6 +26,7 @@ const Frase = styled.h1`
   justify-content: center;
   color: white;
   padding: 30px;
+
 `
 const CriarPlaylist = styled.div`
   display: grid;
@@ -23,7 +35,14 @@ const CriarPlaylist = styled.div`
   color: white;
   justify-content: center;
   align-items: center;
-  border: 1px white solid;
+  border: 0.5px white solid;
+  text-align: center;
+  opacity: 50%;
+  &:hover {
+    opacity: 100%;
+    border: none;
+    background-color: #513A9D;
+  }
 `
 const ListaPlaylist = styled.div`
   display: grid;
@@ -32,7 +51,15 @@ const ListaPlaylist = styled.div`
   color: white;
   justify-content: center;
   align-items: center;
-  border: 1px white solid;
+  border: 0.5px white solid;
+  text-align: center;
+  opacity: 50%;
+  &:hover {
+    opacity: 100%;
+    border: none;
+    background-color: #513A9D;
+  }
+
 `
 const Player = styled.div`
   display: grid;
@@ -41,9 +68,16 @@ const Player = styled.div`
   color: white;
   justify-content: center;
   align-items: center;
-  border: 1px white solid;
-`
+  border: 0.5px white solid;
+  text-align: center;
+  opacity: 50%;
+  &:hover {
+    opacity: 100%;
+    border: none;
+    background-color: #513A9D;
+  }
 
+`
 class App extends React.Component {
 
   render() {
@@ -52,12 +86,16 @@ class App extends React.Component {
 
 
     <div className="App">
+      
       <Base>
+          
           <Frase> Seja muito bem vindo(a) ao LabeFy. </Frase>
-          <CriarPlaylist> <div> Aqui ficará o cadastro </div></CriarPlaylist>
-          <ListaPlaylist> <div> Aqui fica a lista de musicas </div></ListaPlaylist>
-          <Player> <div> Aqui é o Player</div></Player>
+          <CriarPlaylist> <CardCadastro /> </CriarPlaylist>
+          <ListaPlaylist> <CardListaMusicas /> </ListaPlaylist>
+          <Player> <div> Aqui é o Player</div> </Player>
+
       </Base>
+      
     </div>
 
 

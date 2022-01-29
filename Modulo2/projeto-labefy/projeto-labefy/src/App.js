@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import CardCadastro from './components/CardCadastro'
-import CardListaMusicas from './components/CardListaMusicas'
+import PlayerOficial from './components/Player';
+import CardCadastro from './components/CardCadastro';
+import CardListaMusicas from './components/CardListaMusicas';
+import logo from './components/img/logo.jpg';
 
 
 const Base = styled.div`
@@ -11,12 +12,15 @@ const Base = styled.div`
   grid-template-rows: 1fr 4fr;
   border: 1px white solid;
   height: 90vh;
+  & img {
+    width: 100%;
+  }
 `
-// const ImagenFundo = styled.img`
-//   display: grid;
+// const logoEstilo = styled.img`
+//   display: block;
 //   grid-column: 1 / 4;
-//   grid-row: 1 / 3;
-//   width: 100px;
+//   grid-row: 1 / 2;
+//   width: 100%;
 // `
 
 const Frase = styled.h1`
@@ -26,7 +30,7 @@ const Frase = styled.h1`
   justify-content: center;
   color: white;
   padding: 30px;
-
+  text-align: center;
 `
 const CriarPlaylist = styled.div`
   display: grid;
@@ -76,8 +80,9 @@ const Player = styled.div`
     border: none;
     background-color: #513A9D;
   }
-
 `
+
+
 class App extends React.Component {
 
   render() {
@@ -89,10 +94,10 @@ class App extends React.Component {
       
       <Base>
           
-          <Frase> Seja muito bem vindo(a) ao LabeFy. </Frase>
+          <Frase> Seja muito bem vindo(a) ao projeto LabeFy! <img src={logo} /> </Frase>
           <CriarPlaylist> <CardCadastro /> </CriarPlaylist>
           <ListaPlaylist> <CardListaMusicas /> </ListaPlaylist>
-          <Player> <div> Aqui é o Player</div> </Player>
+          <Player> <PlayerOficial /> </Player>
 
       </Base>
       

@@ -1,14 +1,24 @@
 import React from 'react';
 // import { BrowserRouter, Routes, Route } from "react-router-dom";  //(Switch foi subtituido por Routes)
 import { useNavigate } from "react-router-dom"; //(History foi substituido por navigate)
-// import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import styled from 'styled-components';
 // import axios from 'axios';
 
 const Painel_Admin = () => {
 
-
 const navigate = useNavigate()
+
+useEffect(() => {
+
+const token = localStorage.getItem('token');
+    if(token === null) {
+        console.log('Precisa Autenticar')
+        vaiParaLogin();
+        }
+}, [])
+
+
 
 const vaiParaLogin = () => {
         alert("Deslogado com Sucesso")

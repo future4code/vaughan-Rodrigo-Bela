@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"; 
 import Header from "../components/Header/Header";
-
-
+import styled from "styled-components";
 import Login from '../pages/Login/Login';
 import Cadastro from '../pages/Cadastro/Cadastro';
 import Detalhe_Receita from '../pages/Detalhe_Receita/Detalhe_Receita';
@@ -11,13 +10,22 @@ import Add_Receita from '../pages/Add_Receita/Add_Receita';
 import Erro from '../pages/Erro/Erro';
 
 
+const Base = styled.div` 
+display: grid;
+justify-items: center;
+/* align-items: center; */
+/* justify-content: center; */
+/* align-content: center; */
+`
 
 const Router = () => {
     return(
+        <>
+        <Header />
         <BrowserRouter>
-        <Header/>
+            <Base>
             <Routes>
-
+            
                 <Route path={"/login"} element={<Login />} exact />
 
                 <Route path={"/cadastro"} element={<Cadastro />} exact />
@@ -29,9 +37,11 @@ const Router = () => {
                 <Route path={"/add_receita"} element={<Add_Receita />} exact />
 
                 <Route path={"*"} element={<Erro />} exact />
-
+            
             </Routes>
+            </Base>
         </BrowserRouter>
+        </>
     )
 }
 

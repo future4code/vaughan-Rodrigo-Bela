@@ -1,23 +1,35 @@
 import React from "react";
+// import { useNavigate } from "react-router-dom";
+// import Router from "../../routes/Router";
 import styled from "styled-components";
+import logo1 from "../../assets/Logo1.png";
 
 const Modelo = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #FAAF7A;
-    box-shadow: 1px 1.5px 6px 1px;
+    box-shadow: 1px 1px 15px;
     border: none;
-    border-radius: 1px;
     height: 5vh;
     width: 100%;
 `
 
+const Logo_Style = styled.img` 
+    width: 110px;
+`
+
 const Header = () => {
-    return(
+
+// const navigate = useNavigate();
+// const volta_Login = () => {
+//     navigate("/login");
+// };
+  
+return(
         <div>
             <Modelo>
-            <h2> CookEnu </h2> 
+            <Logo_Style src={logo1} />
             <button> Login </button>
             </Modelo> 
         </div>

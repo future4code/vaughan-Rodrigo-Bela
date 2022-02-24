@@ -15,18 +15,24 @@ const Base = styled.div`
 
 const FotoStyles = styled.img`
   width: 15vw;
-  height: 10vh;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px;
 `;
 
 const Card_Receitas = styled.div`
   display: grid;
-  max-height: 200px;
-  max-width: 400px;
+  height: auto;
+  max-width: 420px;
   border-radius: 10px;
-  text-align: center;
-  justify-items: center;
-  align-items: center;
-  background-color: #FEE6D6;
+  background-color: #fee6d6;
+  box-shadow: 1px 1px 4px;
+`;
+
+const Botao_Card = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
 `;
 
 const Lista_Receita = () => {
@@ -66,29 +72,29 @@ const Lista_Receita = () => {
     navigate("/add_receita");
   };
 
+  const vai_Detalhe_Receita = (id) => {
+    navigate(`/detalhe_receita/${id}`);
+  };
+
   const receitasCard = receitas.map((receita) => {
     return (
       <Card_Receitas>
-        <p> {receita.title} </p>
-        <FotoStyles src={receita.image} />
+        <Botao_Card onClick={() => vai_Detalhe_Receita(receita.recipe_id)}>
+          <p> {receita.title} </p>
+          <FotoStyles src={receita.image} />
+        </Botao_Card>
       </Card_Receitas>
     );
   });
 
   return (
-      
     <div>
       <h2> Lista de Receitas </h2>
       <button onClick={volta_Login}> login </button>
-      
+
       <button onClick={vai_Add_Receita}> Adicionar Nova Receita </button>
 
-      <Base>
-      
-      {receitasCard}
-      
-      </Base>
-
+      <Base>{receitasCard}</Base>
     </div>
   );
 };

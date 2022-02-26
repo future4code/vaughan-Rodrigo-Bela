@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import Voltar from "../../assets/Voltar.png";
 
 const Card_Detalhe = styled.div`
   text-align: center;
@@ -18,6 +19,21 @@ const Card_Detalhe = styled.div`
     height: auto;
     width: 60vw;
   }
+`;
+
+const BotaoIcones = styled.button` 
+  border: none;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+& img {
+  width: 40px;
+}`
+
+const Texto = styled.p`
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 1.7vh;
+  color: black;
 `;
 
 const Detalhe_Receita = () => {
@@ -64,19 +80,18 @@ const Detalhe_Receita = () => {
     return (
       <Card_Detalhe>
         <img src={detalheMapeado.image} />
-        <h1> {detalheMapeado.title} </h1>
-        <h3> {detalheMapeado.description} </h3>
+        <Texto> {detalheMapeado.title} </Texto>
+        <Texto> {detalheMapeado.description} </Texto>
       </Card_Detalhe>
     );
   });
 
   return (
     <>
-      <h2> Detalhes da Receita </h2>
-      <button onClick={vai_Lista_Receitas}>
-        {" "}
-        Voltar para Lista de Receitas{" "}
-      </button>
+      <Texto> Detalhes da Receita </Texto>
+      <BotaoIcones onClick={vai_Lista_Receitas}>
+      <img src={Voltar} /> Voltar
+      </BotaoIcones>
       {receitasCardDetalhe}
     </>
   );

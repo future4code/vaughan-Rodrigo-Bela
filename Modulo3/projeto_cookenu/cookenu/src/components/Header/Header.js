@@ -1,8 +1,7 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import Router from "../../routes/Router";
 import styled from "styled-components";
 import logo1 from "../../assets/Logo1.png";
+import RedesS from "../../assets/redesS.png"
 
 const Modelo = styled.div`
   display: flex;
@@ -16,20 +15,15 @@ const Modelo = styled.div`
 `;
 
 const Logo_Style = styled.img`
-  width: 110px;
+  max-width: 6rem;
 `;
 
 const Header = () => {
-  // const navigate = useNavigate();
-  // const volta_Login = () => {
-  //     navigate("/login");
-  // };
-
   return (
     <div>
       <Modelo>
         <Logo_Style src={logo1} />
-        <button> Login </button>
+        <Logo_Style src={RedesS} />
       </Modelo>
     </div>
   );

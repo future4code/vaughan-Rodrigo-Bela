@@ -1,15 +1,52 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import Voltar from "../../assets/Voltar.png";
+
+const Base = styled.div`
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
+`;
 
 const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
-  width: 150vw;
-  max-width: 350px;
-  margin: 20px;
+
+  & input {
+    height: 35px;
+    margin: 10px 5px 0px 10px;
+  }
+
+  & .BotaoCadastrar {
+    height: 35px;
+    background-color: #faaf7a;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 0px 15px -5px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    color: white;
+    cursor: pointer;
+  }
+`;
+
+const BotaoIcones = styled.button`
+  border: none;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+  & img {
+    width: 40px;
+  }
+`;
+const Frase = styled.p`
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 3vh;
+  color: #f5874f;
 `;
 
 const Add_Receita = () => {
@@ -38,6 +75,14 @@ const Add_Receita = () => {
     navigate("/login");
   };
 
+
+  const limpaInput = () => {
+    setTitulo("")
+    setDescricao("")
+    setImagem("")
+  };
+
+
   //________________________________________________________________
 
   const token = localStorage.getItem("token");
@@ -62,16 +107,22 @@ const Add_Receita = () => {
         },
       })
       .then((resp) => {
-        alert("O cadastro da receita deu CERTO");
-        // localStorage.setItem('token', resp.data.token )
+        alert("Otimo, o cadastro da sua receita foi efetuado com Sucesso!");
+        limpaInput()
+
       })
       .catch((err) => {
-        alert("O cadastro da receita deu ERRADO", err.response);
+        alert("Ops, algo deu errado no cadastro, tente novamente em alguns instantes:",err.response);
       });
   };
 
   return (
-    <>
+    <Base>
+      <Frase>
+        {" "}
+        Compartilhe sua receita favorita
+        <br />e faça parte desta comunidade deliciosa.{" "}
+      </Frase>
       <FormStyle onSubmit={fazCadastroPrato}>
         <input
           placeholder="Titulo da Receita"
@@ -88,20 +139,19 @@ const Add_Receita = () => {
           required
         />
         <input
-          placeholder="Link da imagen"
+          placeholder="Cole aqui o Link da imagen do seu prato"
           type="link"
           value={imagen}
           onChange={armazenaImagen}
           required
         />
-        <button> Fazer Cadastro </button>
-      </FormStyle>
 
-      <button onClick={vai_Lista_Receitas}>
-        {" "}
-        Voltar para Lista de Receitas{" "}
-      </button>
-    </>
+        <button className="BotaoCadastrar"> Fazer Cadastro </button>
+      </FormStyle>
+      <BotaoIcones onClick={vai_Lista_Receitas}>
+        <img src={Voltar} /> Voltar para lista
+      </BotaoIcones>
+    </Base>
   );
 };
 

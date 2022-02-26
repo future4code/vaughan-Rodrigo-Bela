@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import logo2 from "../../assets/Logo2.png";
 import CozPc from "../../assets/CozPc.png";
@@ -18,18 +18,32 @@ const Base = styled.div`
 const FormStyle = styled.form`
   display: flex;
   flex-direction: column;
-  min-width: 10vw;
-  height: auto;
+
   & input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 35px;
-    margin: 5px;
+    max-width: 100rem;
+    margin: 10px 5px 0px 10px;
+  }
+
+  & .BotaoLogar {
+    height: 35px;
+    background-color: #faaf7a;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 0px 15px -5px rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    color: white;
+    cursor: pointer;
   }
 `;
 
 const Logo_Style2 = styled.img`
-  width: 80vw;
-  max-width: 350px;
-  padding: 80px;
+  max-width: 1rem;
+  min-width: 40vw;
+  padding: 50px;
 `;
 
 const BotaoLimpo = styled.button`
@@ -40,9 +54,11 @@ const BotaoLimpo = styled.button`
   cursor: pointer;
 `;
 
-// const Desenho = styled.div`
-//   background-image: url('../../assets/CozPc.png');
-// `;
+const Frase = styled.p`
+  font-family: "Nothing You Could Do", cursive;
+  font-size: 3vh;
+  color: #f5874f;
+`;
 
 //------------------------------------------------------------------
 
@@ -64,6 +80,11 @@ const Login = () => {
     navigate("/cadastro");
   };
 
+  const limpaInput = () => {
+    setEmail("")
+    setSenha("")
+  };
+
   //------------------------------------------------------------------
 
   const fazlogin = (event) => {
@@ -78,14 +99,13 @@ const Login = () => {
       .post("https://cookenu-api.herokuapp.com/user/login", body)
 
       .then((resp) => {
-        console.log("Deu certo, O Token é :", resp.data.token);
         localStorage.setItem("token", resp.data.token);
-        alert("Sucesso");
+        alert("Otimo, logado com Sucesso!");
+        limpaInput()
         navigate("/");
       })
       .catch((err) => {
-        console.log("Deu Errado", err.response);
-        alert("Problema na Autenticação");
+        alert("Ops, algo deu Errado com o login", err.response);
       });
   };
 
@@ -93,8 +113,9 @@ const Login = () => {
 
   return (
     <Base>
+     
       <Logo_Style2 src={logo2} />
-      <p> Boas receitas nunca esteve tão facil </p>
+      <Frase> Boas receitas nunca esteve tão facil! </Frase>
       <FormStyle onSubmit={fazlogin}>
         <input
           placeholder="Email"
@@ -112,12 +133,16 @@ const Login = () => {
           title={"No mínimo 6 numeros"}
           required
         />
-        <button> Entrar </button>
+        <button className="BotaoLogar"> Entrar </button>
         <BotaoLimpo onClick={vai_Cadastro}> Fazer cadastro </BotaoLimpo>
 
-        <Logo_Style2 src={CozPc} />
-        <Logo_Style2 src={CozSp} />
+        <picture>
+          <source media="(max-width: 890px)" srcset={CozSp} type="image/png" />
+          <source media="(max-width: 1050px)" srcset={CozPc} type="image/png" />
+          <Logo_Style2 src={CozPc} alt="imagem de pc ou celular" />
+        </picture>
       </FormStyle>
+      
     </Base>
   );
 };
